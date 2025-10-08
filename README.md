@@ -4,12 +4,20 @@
 This project demonstrates Test-Driven Development (TDD) by extending a simple calculator class from addition-only to a full four-function calculator.
 
 ## ✅ Completion Status
+
+### Required Exercise (Exercise 1)
 - ✓ Subtract functionality added via TDD
 - ✓ Multiply functionality added via TDD
 - ✓ Divide functionality added via TDD
 - ✓ All tests passing (10/10)
 - ✓ Complete narrative documentation provided
 - ✓ Design decisions encoded in tests
+
+### Optional Exercises (ALL COMPLETED)
+- ✓ **Optional 2:** CI/CD with GitHub Actions (breaking & restoring build)
+- ✓ **Optional 3:** Code coverage (100%) + Static analysis (ESLint)
+- ✓ **Optional 4:** Refactoring with test preservation
+- ✓ **Optional 5:** Fault detection and repair
 
 ## 📁 Files for Submission
 
@@ -23,15 +31,47 @@ This project demonstrates Test-Driven Development (TDD) by extending a simple ca
 ### Additional Documentation
 - **README.md** - This file
 - **SUBMISSION_SUMMARY.md** - Executive summary
+- **OPTIONAL_EXERCISES.md** - Complete optional exercises documentation ⭐
+
+### Optional Exercise Files
+- **Calc.test.refactored.js** - Refactored test suite (Optional 4)
+- **Calc.test.refactor-before.js** - Original before refactoring
+- **Calc.buggy.js** - Buggy version with fault (Optional 5)
+- **Calc.fault-test.js** - Tests demonstrating fault
+- **Calc.repaired.js** - Repaired version
+- **Calc.repair-test.js** - Tests verifying repair
+- **.github/workflows/ci.yml** - CI/CD pipeline (Optional 2)
+- **.eslintrc.json** - ESLint config (Optional 3)
+- **package.json** - npm scripts for coverage and linting
 
 ## 🚀 How to Run
 
-### Run All Tests
+### Run Main Tests
 ```bash
 node Calc.test.js
 ```
 
-### Expected Output
+### Run Optional Exercise Tests
+```bash
+# Refactored test suite
+node Calc.test.refactored.js
+
+# Fault detection (will fail, demonstrating bug)
+node Calc.fault-test.js
+
+# Fault repair verification (all pass)
+node Calc.repair-test.js
+```
+
+### Run Coverage and Linting
+```bash
+npm install           # Install dependencies
+npm test             # Run tests
+npm run coverage     # Generate coverage report
+npm run lint         # Run ESLint
+```
+
+### Expected Output (Main Tests)
 ```
 === Running TDD Iteration 3: Divide ===
 
@@ -167,18 +207,32 @@ TDD Iteration X: [Feature Name]
 
 ```
 hw2/
-├── Calc.js                    # Final implementation
-├── Calc.test.js              # Test suite
-├── TDD_NARRATIVE.md          # ⭐ Main deliverable
-├── CODE_PRINTOUTS.md         # Code printouts
-├── test_results.txt          # Test execution screenshot
-├── SUBMISSION_SUMMARY.md     # Executive summary
-├── README.md                 # This file
-└── CalcTDD.pdf              # Assignment specification
+├── Calc.js                           # Final implementation
+├── Calc.test.js                      # Main test suite
+├── TDD_NARRATIVE.md                  # ⭐ TDD process narrative
+├── CODE_PRINTOUTS.md                 # Code printouts
+├── test_results.txt                  # Test results
+├── SUBMISSION_SUMMARY.md             # Executive summary
+├── README.md                         # This file
+├── OPTIONAL_EXERCISES.md             # ⭐ Optional exercises doc
+│
+├── Optional Exercise Files:
+├── .github/workflows/ci.yml          # CI/CD pipeline
+├── .eslintrc.json                    # ESLint config
+├── package.json                      # npm configuration
+├── Calc.test.refactored.js          # Refactored tests
+├── Calc.test.refactor-before.js     # Original tests
+├── Calc.buggy.js                    # Buggy version
+├── Calc.fault-test.js               # Fault detection tests
+├── Calc.repaired.js                 # Repaired version
+├── Calc.repair-test.js              # Repair verification
+│
+└── CalcTDD.pdf                      # Assignment specification
 ```
 
 ## 🎯 Submission Checklist
 
+### Required Exercise
 - [x] All required functionality implemented
 - [x] All tests passing (10/10)
 - [x] Test printouts provided
@@ -187,6 +241,16 @@ hw2/
 - [x] **Comprehensive TDD narrative**
 - [x] Design decisions documented
 - [x] Red-Green-Refactor cycle documented
+
+### Optional Exercises (ALL COMPLETED)
+- [x] **Optional 2:** GitHub repo with CI/CD
+- [x] **Optional 2:** Demonstrated breaking build
+- [x] **Optional 2:** Demonstrated restoring build
+- [x] **Optional 3:** Code coverage (100%)
+- [x] **Optional 3:** Static analysis (ESLint)
+- [x] **Optional 4:** Refactoring with tests
+- [x] **Optional 5:** Fault detection with failing test
+- [x] **Optional 5:** Fault repair with passing tests
 
 ## 💡 Key Takeaways
 
