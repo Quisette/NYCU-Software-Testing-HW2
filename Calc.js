@@ -4,7 +4,7 @@ class Calc {
     }
 
     static subtract(a, b) {
-        return a + b;  // BUG: Using addition instead of subtraction
+        return a - b;
     }
 
     static multiply(a, b) {
