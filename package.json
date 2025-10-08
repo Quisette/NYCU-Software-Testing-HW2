@@ -1,0 +1,19 @@
+{
+  "name": "calc-tdd",
+  "version": "1.0.0",
+  "description": "Test-Driven Development exercise for a calculator class",
+  "main": "Calc.js",
+  "scripts": {
+    "test": "node Calc.test.js",
+    "coverage": "c8 --reporter=text --reporter=lcov --reporter=html node Calc.test.js",
+    "lint": "eslint Calc.js Calc.test.js",
+    "lint:fix": "eslint Calc.js Calc.test.js --fix"
+  },
+  "keywords": ["tdd", "calculator", "testing"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "c8": "^8.0.1",
+    "eslint": "^8.50.0"
+  }
+}
