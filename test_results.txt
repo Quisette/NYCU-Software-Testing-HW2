@@ -1,0 +1,16 @@
+
+=== Running TDD Iteration 3: Divide ===
+
+✓ testAdd passed
+✓ testSubtract passed
+✓ testSubtractNegativeResult passed
+✓ testMultiply passed
+✓ testMultiplyByZero passed
+✓ testMultiplyNegative passed
+✓ testDivide passed
+✓ testDivideWithRemainder passed
+✓ testDivideByZero passed
+✓ testDivideNegative passed
+
+✓ All tests passed!
+
