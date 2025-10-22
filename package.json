@@ -1,0 +1,13 @@
+{
+  "name": "calc-project",
+  "version": "1.0.0",
+  "description": "Calculator with tests and CI/CD",
+  "main": "Calc.js",
+  "scripts": {
+    "test": "node --test",
+    "test:watch": "node --watch --test"
+  },
+  "keywords": ["calculator", "testing"],
+  "author": "",
+  "license": "MIT"
+}
