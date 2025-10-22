@@ -99,20 +99,30 @@ class Calc {
 ## TDD Methodology
 
 ### Phase 1: Subtract
-1. **Red**: 8 failing tests ❌
+1. **Red**: 8 failing tests 
 2. **Green**: Implement `subtract()` ✅
 3. **Refactor**: Already optimal
 
 ### Phase 2: Multiply
-1. **Red**: 8 failing tests ❌
+1. **Red**: 8 failing tests 
 2. **Green**: Implement `multiply()` ✅
 3. **Refactor**: Already optimal
 
 ### Phase 3: Divide
-1. **Red**: 9 failing tests ❌
+1. **Red**: 9 failing tests 
 2. **Green**: Implement `divide()` with error handling ✅
 3. **Refactor**: Already optimal
 
+### Test Results
+
+```
+node --test --experimental-test-coverage
+```
+![](test_result.png)
+
+See [test.dump](test.dump) for detailed test results.
+
+You can also inspect the test results in the github actions in this [repository](https://github.com/Quisette/NYCU-Software-Testing-HW2)
 ---
 
 ## Design Decisions (from Tests)
