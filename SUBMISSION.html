@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Software Testing Homework 2 - Submission</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="software-testing-homework-2---submission">Software Testing Homework 2 - Submission</h1>
+<h2 id="student-assignment-test-driven-development-with-calcjs">Student Assignment: Test-Driven Development with Calc.js</h2>
+<hr>
+<h2 id="part-1-test-suite-printout">Part 1: Test Suite Printout</h2>
+<h3 id="file-calctestjs">File: Calc.test.js</h3>
+<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { test, describe } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;node:test&#x27;</span>);
+<span class="hljs-keyword">const</span> assert = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;node:assert&#x27;</span>);
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">Calc</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./Calc&#x27;</span>);
+
+<span class="hljs-title function_">describe</span>(<span class="hljs-string">&#x27;Calc&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-title function_">describe</span>(<span class="hljs-string">&#x27;add&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should add two positive numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">add</span>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>), <span class="hljs-number">5</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should add two negative numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">add</span>(-<span class="hljs-number">2</span>, -<span class="hljs-number">3</span>), -<span class="hljs-number">5</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should add positive and negative numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">add</span>(<span class="hljs-number">10</span>, -<span class="hljs-number">5</span>), <span class="hljs-number">5</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should add zero to a number&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">add</span>(<span class="hljs-number">5</span>, <span class="hljs-number">0</span>), <span class="hljs-number">5</span>);
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">add</span>(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>), <span class="hljs-number">5</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should add two zeros&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">add</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should add decimal numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      <span class="hljs-keyword">const</span> result = <span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">add</span>(<span class="hljs-number">1.5</span>, <span class="hljs-number">2.3</span>);
+      assert.<span class="hljs-title function_">ok</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(result - <span class="hljs-number">3.8</span>) &lt; <span class="hljs-number">0.0001</span>, <span class="hljs-string">`Expected ~3.8, got <span class="hljs-subst">${result}</span>`</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should add large numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">add</span>(<span class="hljs-number">1000000</span>, <span class="hljs-number">2000000</span>), <span class="hljs-number">3000000</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should handle floating point precision&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      <span class="hljs-keyword">const</span> result = <span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">add</span>(<span class="hljs-number">0.1</span>, <span class="hljs-number">0.2</span>);
+      assert.<span class="hljs-title function_">ok</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(result - <span class="hljs-number">0.3</span>) &lt; <span class="hljs-number">0.0001</span>, <span class="hljs-string">`Expected ~0.3, got <span class="hljs-subst">${result}</span>`</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should return correct result for commutative property (a+b = b+a)&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      <span class="hljs-keyword">const</span> a = <span class="hljs-number">7</span>;
+      <span class="hljs-keyword">const</span> b = <span class="hljs-number">3</span>;
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">add</span>(a, b), <span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">add</span>(b, a));
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should add when one argument is negative zero&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">add</span>(-<span class="hljs-number">0</span>, <span class="hljs-number">5</span>), <span class="hljs-number">5</span>);
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">add</span>(<span class="hljs-number">5</span>, -<span class="hljs-number">0</span>), <span class="hljs-number">5</span>);
+    });
+  });
+
+  <span class="hljs-title function_">describe</span>(<span class="hljs-string">&#x27;subtract&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should subtract two positive numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">subtract</span>(<span class="hljs-number">10</span>, <span class="hljs-number">3</span>), <span class="hljs-number">7</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should subtract two negative numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">subtract</span>(-<span class="hljs-number">10</span>, -<span class="hljs-number">3</span>), -<span class="hljs-number">7</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should subtract positive and negative numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">subtract</span>(<span class="hljs-number">10</span>, -<span class="hljs-number">5</span>), <span class="hljs-number">15</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should subtract zero from a number&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">subtract</span>(<span class="hljs-number">5</span>, <span class="hljs-number">0</span>), <span class="hljs-number">5</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should subtract a number from zero&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">subtract</span>(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>), -<span class="hljs-number">5</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should subtract two zeros&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">subtract</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should subtract decimal numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      <span class="hljs-keyword">const</span> result = <span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">subtract</span>(<span class="hljs-number">5.5</span>, <span class="hljs-number">2.3</span>);
+      assert.<span class="hljs-title function_">ok</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(result - <span class="hljs-number">3.2</span>) &lt; <span class="hljs-number">0.0001</span>, <span class="hljs-string">`Expected ~3.2, got <span class="hljs-subst">${result}</span>`</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should subtract large numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">subtract</span>(<span class="hljs-number">1000000</span>, <span class="hljs-number">500000</span>), <span class="hljs-number">500000</span>);
+    });
+  });
+
+  <span class="hljs-title function_">describe</span>(<span class="hljs-string">&#x27;multiply&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should multiply two positive numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">multiply</span>(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>), <span class="hljs-number">12</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should multiply two negative numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">multiply</span>(-<span class="hljs-number">3</span>, -<span class="hljs-number">4</span>), <span class="hljs-number">12</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should multiply positive and negative numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">multiply</span>(<span class="hljs-number">10</span>, -<span class="hljs-number">5</span>), -<span class="hljs-number">50</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should multiply by zero&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">multiply</span>(<span class="hljs-number">5</span>, <span class="hljs-number">0</span>), <span class="hljs-number">0</span>);
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">multiply</span>(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>), <span class="hljs-number">0</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should multiply one by a number&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">multiply</span>(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>), <span class="hljs-number">5</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should multiply decimal numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      <span class="hljs-keyword">const</span> result = <span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">multiply</span>(<span class="hljs-number">2.5</span>, <span class="hljs-number">4.0</span>);
+      assert.<span class="hljs-title function_">ok</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(result - <span class="hljs-number">10.0</span>) &lt; <span class="hljs-number">0.0001</span>, <span class="hljs-string">`Expected ~10.0, got <span class="hljs-subst">${result}</span>`</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should multiply large numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">multiply</span>(<span class="hljs-number">1000</span>, <span class="hljs-number">2000</span>), <span class="hljs-number">2000000</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should verify commutative property (a*b = b*a)&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      <span class="hljs-keyword">const</span> a = <span class="hljs-number">7</span>;
+      <span class="hljs-keyword">const</span> b = <span class="hljs-number">3</span>;
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">multiply</span>(a, b), <span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">multiply</span>(b, a));
+    });
+  });
+
+  <span class="hljs-title function_">describe</span>(<span class="hljs-string">&#x27;divide&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should divide two positive numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">divide</span>(<span class="hljs-number">10</span>, <span class="hljs-number">2</span>), <span class="hljs-number">5</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should divide and return floating point result&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      <span class="hljs-keyword">const</span> result = <span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">divide</span>(<span class="hljs-number">10</span>, <span class="hljs-number">3</span>);
+      assert.<span class="hljs-title function_">ok</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(result - <span class="hljs-number">3.3333333</span>) &lt; <span class="hljs-number">0.0001</span>, <span class="hljs-string">`Expected ~3.3333333, got <span class="hljs-subst">${result}</span>`</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should divide two negative numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">divide</span>(-<span class="hljs-number">10</span>, -<span class="hljs-number">2</span>), <span class="hljs-number">5</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should divide positive and negative numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">divide</span>(<span class="hljs-number">10</span>, -<span class="hljs-number">2</span>), -<span class="hljs-number">5</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should divide zero by a number&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">divide</span>(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>), <span class="hljs-number">0</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should divide decimal numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      <span class="hljs-keyword">const</span> result = <span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">divide</span>(<span class="hljs-number">10.0</span>, <span class="hljs-number">2.5</span>);
+      assert.<span class="hljs-title function_">ok</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(result - <span class="hljs-number">4.0</span>) &lt; <span class="hljs-number">0.0001</span>, <span class="hljs-string">`Expected ~4.0, got <span class="hljs-subst">${result}</span>`</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should divide large numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">divide</span>(<span class="hljs-number">1000000</span>, <span class="hljs-number">1000</span>), <span class="hljs-number">1000</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should throw error when dividing by zero&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      assert.<span class="hljs-title function_">throws</span>(<span class="hljs-function">() =&gt;</span> {
+        <span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">divide</span>(<span class="hljs-number">10</span>, <span class="hljs-number">0</span>);
+      }, <span class="hljs-title class_">Error</span>);
+    });
+
+    <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should divide and return floating point for non-integer results&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+      <span class="hljs-keyword">const</span> result = <span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">divide</span>(<span class="hljs-number">7</span>, <span class="hljs-number">2</span>);
+      assert.<span class="hljs-title function_">ok</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(result - <span class="hljs-number">3.5</span>) &lt; <span class="hljs-number">0.0001</span>, <span class="hljs-string">`Expected ~3.5, got <span class="hljs-subst">${result}</span>`</span>);
+    });
+  });
+});
+</code></pre>
+<h3 id="test-statistics">Test Statistics</h3>
+<ul>
+<li><strong>Total Tests</strong>: 35</li>
+<li><strong>Test Suites</strong>: 5 (Root suite + add, subtract, multiply, divide)</li>
+<li><strong>All Tests</strong>: PASS ✅</li>
+</ul>
+<hr>
+<h2 id="part-2-final-calcjs-implementation">Part 2: Final Calc.js Implementation</h2>
+<h3 id="file-calcjs">File: Calc.js</h3>
+<pre><code class="language-javascript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Calc</span> {
+    <span class="hljs-keyword">static</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a, b</span>) {
+        <span class="hljs-keyword">return</span> a + b;
+    }
+
+    <span class="hljs-keyword">static</span> <span class="hljs-title function_">subtract</span>(<span class="hljs-params">a, b</span>) {
+        <span class="hljs-keyword">return</span> a - b;
+    }
+
+    <span class="hljs-keyword">static</span> <span class="hljs-title function_">multiply</span>(<span class="hljs-params">a, b</span>) {
+        <span class="hljs-keyword">return</span> a * b;
+    }
+
+    <span class="hljs-keyword">static</span> <span class="hljs-title function_">divide</span>(<span class="hljs-params">a, b</span>) {
+        <span class="hljs-keyword">if</span> (b === <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&#x27;Division by zero is not allowed&#x27;</span>);
+        }
+        <span class="hljs-keyword">return</span> a / b;
+    }
+}
+
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-title class_">Calc</span>;
+</code></pre>
+<hr>
+<h2 id="part-3-test-execution-screenshot">Part 3: Test Execution Screenshot</h2>
+<h3 id="command-npm-test">Command: <code>npm test</code></h3>
+<h3 id="output">Output:</h3>
+<pre><code>&gt; calc-project@1.0.0 test
+&gt; node --test
+
+TAP version 13
+# Subtest: Calc
+    # Subtest: add
+        # Subtest: should add two positive numbers
+        ok 1 - should add two positive numbers
+          ---
+          duration_ms: 0.199084
+          ...
+        # Subtest: should add two negative numbers
+        ok 2 - should add two negative numbers
+          ---
+          duration_ms: 0.034125
+          ...
+        # Subtest: should add positive and negative numbers
+        ok 3 - should add positive and negative numbers
+          ---
+          duration_ms: 0.024334
+          ...
+        # Subtest: should add zero to a number
+        ok 4 - should add zero to a number
+          ---
+          duration_ms: 0.025084
+          ...
+        # Subtest: should add two zeros
+        ok 5 - should add two zeros
+          ---
+          duration_ms: 0.025375
+          ...
+        # Subtest: should add decimal numbers
+        ok 6 - should add decimal numbers
+          ---
+          duration_ms: 0.078125
+          ...
+        # Subtest: should add large numbers
+        ok 7 - should add large numbers
+          ---
+          duration_ms: 0.095875
+          ...
+        # Subtest: should handle floating point precision
+        ok 8 - should handle floating point precision
+          ---
+          duration_ms: 0.036542
+          ...
+        # Subtest: should return correct result for commutative property (a+b = b+a)
+        ok 9 - should return correct result for commutative property (a+b = b+a)
+          ---
+          duration_ms: 0.455708
+          ...
+        # Subtest: should add when one argument is negative zero
+        ok 10 - should add when one argument is negative zero
+          ---
+          duration_ms: 0.034041
+          ...
+        1..10
+    ok 1 - add
+      ---
+      duration_ms: 1.297458
+      type: 'suite'
+      ...
+    # Subtest: subtract
+        # Subtest: should subtract two positive numbers
+        ok 1 - should subtract two positive numbers
+          ---
+          duration_ms: 0.11975
+          ...
+        # Subtest: should subtract two negative numbers
+        ok 2 - should subtract two negative numbers
+          ---
+          duration_ms: 0.023166
+          ...
+        # Subtest: should subtract positive and negative numbers
+        ok 3 - should subtract positive and negative numbers
+          ---
+          duration_ms: 0.021458
+          ...
+        # Subtest: should subtract zero from a number
+        ok 4 - should subtract zero from a number
+          ---
+          duration_ms: 0.110917
+          ...
+        # Subtest: should subtract a number from zero
+        ok 5 - should subtract a number from zero
+          ---
+          duration_ms: 0.034
+          ...
+        # Subtest: should subtract two zeros
+        ok 6 - should subtract two zeros
+          ---
+          duration_ms: 0.022209
+          ...
+        # Subtest: should subtract decimal numbers
+        ok 7 - should subtract decimal numbers
+          ---
+          duration_ms: 0.080958
+          ...
+        # Subtest: should subtract large numbers
+        ok 8 - should subtract large numbers
+          ---
+          duration_ms: 0.022708
+          ...
+        1..8
+    ok 2 - subtract
+      ---
+      duration_ms: 0.493792
+      type: 'suite'
+      ...
+    # Subtest: multiply
+        # Subtest: should multiply two positive numbers
+        ok 1 - should multiply two positive numbers
+          ---
+          duration_ms: 0.154875
+          ...
+        # Subtest: should multiply two negative numbers
+        ok 2 - should multiply two negative numbers
+          ---
+          duration_ms: 0.0255
+          ...
+        # Subtest: should multiply positive and negative numbers
+        ok 3 - should multiply positive and negative numbers
+          ---
+          duration_ms: 0.020875
+          ...
+        # Subtest: should multiply by zero
+        ok 4 - should multiply by zero
+          ---
+          duration_ms: 0.021833
+          ...
+        # Subtest: should multiply one by a number
+        ok 5 - should multiply one by a number
+          ---
+          duration_ms: 0.019584
+          ...
+        # Subtest: should multiply decimal numbers
+        ok 6 - should multiply decimal numbers
+          ---
+          duration_ms: 0.02225
+          ...
+        # Subtest: should multiply large numbers
+        ok 7 - should multiply large numbers
+          ---
+          duration_ms: 0.025333
+          ...
+        # Subtest: should verify commutative property (a*b = b*a)
+        ok 8 - should verify commutative property (a*b = b*a)
+          ---
+          duration_ms: 0.023667
+          ...
+        1..8
+    ok 3 - multiply
+      ---
+      duration_ms: 0.376209
+      type: 'suite'
+      ...
+    # Subtest: divide
+        # Subtest: should divide two positive numbers
+        ok 1 - should divide two positive numbers
+          ---
+          duration_ms: 0.370375
+          ...
+        # Subtest: should divide and return floating point result
+        ok 2 - should divide and return floating point result
+          ---
+          duration_ms: 0.035541
+          ...
+        # Subtest: should divide two negative numbers
+        ok 3 - should divide two negative numbers
+          ---
+          duration_ms: 0.025958
+          ...
+        # Subtest: should divide positive and negative numbers
+        ok 4 - should divide positive and negative numbers
+          ---
+          duration_ms: 0.018417
+          ...
+        # Subtest: should divide zero by a number
+        ok 5 - should divide zero by a number
+          ---
+          duration_ms: 0.017833
+          ...
+        # Subtest: should divide decimal numbers
+        ok 6 - should divide decimal numbers
+          ---
+          duration_ms: 0.02025
+          ...
+        # Subtest: should divide large numbers
+        ok 7 - should divide large numbers
+          ---
+          duration_ms: 0.017167
+          ...
+        # Subtest: should throw error when dividing by zero
+        ok 8 - should throw error when dividing by zero
+          ---
+          duration_ms: 0.144875
+          ...
+        # Subtest: should divide and return floating point for non-integer results
+        ok 9 - should divide and return floating point for non-integer results
+          ---
+          duration_ms: 0.02125
+          ...
+        1..9
+    ok 4 - divide
+      ---
+      duration_ms: 0.721083
+      type: 'suite'
+      ...
+    1..4
+ok 1 - Calc
+  ---
+  duration_ms: 3.311
+  type: 'suite'
+  ...
+1..1
+# tests 35
+# suites 5
+# pass 35
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 48.885125
+</code></pre>
+<h3 id="summary--all-tests-pass-3535">Summary: ✅ ALL TESTS PASS (35/35)</h3>
+<hr>
+<h2 id="part-4-tdd-narrative">Part 4: TDD Narrative</h2>
+<h3 id="overview">Overview</h3>
+<p>This section describes the test-driven development process using the Red → Green → Refactor cycle.</p>
+<h3 id="phase-1-subtract---red--green--refactor">Phase 1: SUBTRACT - Red → Green → Refactor</h3>
+<h4 id="red-create-failing-test">RED: Create Failing Test</h4>
+<p>First, we created 8 test cases for the <code>subtract</code> operation <strong>before</strong> implementing it:</p>
+<pre><code class="language-javascript"><span class="hljs-title function_">describe</span>(<span class="hljs-string">&#x27;subtract&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should subtract two positive numbers&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+    assert.<span class="hljs-title function_">strictEqual</span>(<span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">subtract</span>(<span class="hljs-number">10</span>, <span class="hljs-number">3</span>), <span class="hljs-number">7</span>);
+  });
+  <span class="hljs-comment">// ... 7 more test cases</span>
+});
+</code></pre>
+<p><strong>Initial Result</strong>: Tests FAIL with error: <code>Calc.subtract is not a function</code></p>
+<h4 id="green-implement-minimum-code">GREEN: Implement Minimum Code</h4>
+<p>We implemented the minimal code to make tests pass:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">static</span> <span class="hljs-title function_">subtract</span>(<span class="hljs-params">a, b</span>) {
+    <span class="hljs-keyword">return</span> a - b;
+}
+</code></pre>
+<p><strong>Result</strong>: All 8 subtract tests PASS ✅</p>
+<h4 id="refactor">REFACTOR</h4>
+<p>No refactoring needed - the implementation is already:</p>
+<ul>
+<li><strong>Simple</strong>: One-line method</li>
+<li><strong>Readable</strong>: Clear intent</li>
+<li><strong>Efficient</strong>: O(1) time complexity</li>
+</ul>
+<h3 id="phase-2-multiply---red--green--refactor">Phase 2: MULTIPLY - Red → Green → Refactor</h3>
+<h4 id="red-create-failing-tests">RED: Create Failing Tests</h4>
+<p>Created 8 test cases including:</p>
+<ul>
+<li>Basic multiplication (3 × 4 = 12)</li>
+<li>Negative numbers (-3 × -4 = 12)</li>
+<li>Zero property (5 × 0 = 0)</li>
+<li>Identity element (1 × 5 = 5)</li>
+<li>Commutative property (a × b = b × a)</li>
+<li>Decimal support (2.5 × 4.0 = 10.0)</li>
+<li>Large numbers (1,000 × 2,000 = 2,000,000)</li>
+</ul>
+<p><strong>Initial Result</strong>: Tests FAIL with error: <code>Calc.multiply is not a function</code></p>
+<h4 id="green-implement-multiply">GREEN: Implement Multiply</h4>
+<pre><code class="language-javascript"><span class="hljs-keyword">static</span> <span class="hljs-title function_">multiply</span>(<span class="hljs-params">a, b</span>) {
+    <span class="hljs-keyword">return</span> a * b;
+}
+</code></pre>
+<p><strong>Result</strong>: All 8 multiply tests PASS ✅</p>
+<h4 id="refactor-1">REFACTOR</h4>
+<p>No refactoring needed - follows same pattern as subtract with natural support for all test requirements.</p>
+<h3 id="phase-3-divide---red--green--refactor">Phase 3: DIVIDE - Red → Green → Refactor</h3>
+<h4 id="red-create-failing-tests-1">RED: Create Failing Tests</h4>
+<p>Created 9 test cases with <strong>critical design decisions</strong>:</p>
+<p><strong>Design Decision 1: Division Returns Floating-Point</strong></p>
+<pre><code class="language-javascript"><span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should divide and return floating point result&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-keyword">const</span> result = <span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">divide</span>(<span class="hljs-number">10</span>, <span class="hljs-number">3</span>);
+  assert.<span class="hljs-title function_">ok</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(result - <span class="hljs-number">3.3333333</span>) &lt; <span class="hljs-number">0.0001</span>,
+    <span class="hljs-string">`Expected ~3.3333333, got <span class="hljs-subst">${result}</span>`</span>);
+});
+</code></pre>
+<p>This test REQUIRES division to return <code>3.3333...</code>, not <code>3</code>. This determines the behavior: <strong>floating-point division, not integer division</strong>.</p>
+<p><strong>Design Decision 2: Division by Zero Throws Error</strong></p>
+<pre><code class="language-javascript"><span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;should throw error when dividing by zero&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+  assert.<span class="hljs-title function_">throws</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-title class_">Calc</span>.<span class="hljs-title function_">divide</span>(<span class="hljs-number">10</span>, <span class="hljs-number">0</span>);
+  }, <span class="hljs-title class_">Error</span>);
+});
+</code></pre>
+<p>This test REQUIRES an error to be thrown when dividing by zero.</p>
+<p>Other test cases include:</p>
+<ul>
+<li>Basic division (10 ÷ 2 = 5)</li>
+<li>Negative numbers (-10 ÷ -2 = 5)</li>
+<li>Mixed signs (10 ÷ -2 = -5)</li>
+<li>Zero dividend (0 ÷ 5 = 0)</li>
+<li>Decimal operands (10.0 ÷ 2.5 = 4.0)</li>
+<li>Large numbers (1,000,000 ÷ 1,000 = 1,000)</li>
+<li>Non-integer results (7 ÷ 2 = 3.5)</li>
+</ul>
+<p><strong>Initial Result</strong>: Tests FAIL with error: <code>Calc.divide is not a function</code></p>
+<h4 id="green-implement-divide-with-error-handling">GREEN: Implement Divide with Error Handling</h4>
+<pre><code class="language-javascript"><span class="hljs-keyword">static</span> <span class="hljs-title function_">divide</span>(<span class="hljs-params">a, b</span>) {
+    <span class="hljs-keyword">if</span> (b === <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&#x27;Division by zero is not allowed&#x27;</span>);
+    }
+    <span class="hljs-keyword">return</span> a / b;
+}
+</code></pre>
+<p><strong>Implementation Details</strong>:</p>
+<ol>
+<li>Check if divisor is zero</li>
+<li>Throw error if zero (satisfies division by zero test)</li>
+<li>Return natural division result (JavaScript's <code>/</code> operator returns floats)</li>
+</ol>
+<p><strong>Result</strong>: All 9 divide tests PASS ✅</p>
+<h4 id="refactor-2">REFACTOR</h4>
+<p>No refactoring needed - error handling is explicit and minimal.</p>
+<hr>
+<h2 id="summary-of-tdd-process">Summary of TDD Process</h2>
+<h3 id="iteration-1-subtract">Iteration 1: Subtract</h3>
+<ul>
+<li><strong>Tests Created</strong>: 8 (RED phase)</li>
+<li><strong>Code Implemented</strong>: 3 lines (GREEN phase)</li>
+<li><strong>Refactoring</strong>: None needed</li>
+<li><strong>Result</strong>: ✅ 8/8 tests pass</li>
+</ul>
+<h3 id="iteration-2-multiply">Iteration 2: Multiply</h3>
+<ul>
+<li><strong>Tests Created</strong>: 8 (RED phase)</li>
+<li><strong>Code Implemented</strong>: 3 lines (GREEN phase)</li>
+<li><strong>Refactoring</strong>: None needed</li>
+<li><strong>Result</strong>: ✅ 8/8 tests pass</li>
+</ul>
+<h3 id="iteration-3-divide">Iteration 3: Divide</h3>
+<ul>
+<li><strong>Tests Created</strong>: 9 (RED phase with critical design decisions)</li>
+<li><strong>Code Implemented</strong>: 6 lines with error handling (GREEN phase)</li>
+<li><strong>Refactoring</strong>: None needed</li>
+<li><strong>Result</strong>: ✅ 9/9 tests pass</li>
+</ul>
+<h3 id="final-results">Final Results</h3>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Test Count</th>
+<th>Pass Count</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add (existing)</td>
+<td>10</td>
+<td>10</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Subtract</td>
+<td>8</td>
+<td>8</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Multiply</td>
+<td>8</td>
+<td>8</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Divide</td>
+<td>9</td>
+<td>9</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td><strong>35</strong></td>
+<td><strong>35</strong></td>
+<td><strong>✅ 100%</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="key-insights-from-tdd">Key Insights from TDD</h2>
+<ol>
+<li><strong>Tests Define Requirements</strong>: The division tests explicitly defined that division returns floats, not integers</li>
+<li><strong>Error Handling is Explicit</strong>: The divide-by-zero error test made error handling a requirement, not an afterthought</li>
+<li><strong>Minimal Implementation</strong>: No unnecessary code - only what's needed to pass tests</li>
+<li><strong>100% First-Time Success</strong>: All 35 tests pass on first implementation (no bugs found later)</li>
+<li><strong>Design Decisions Documented in Code</strong>: Future developers can see WHY divide returns floats by reading the tests</li>
+</ol>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>Using Test-Driven Development proved highly effective:</p>
+<ul>
+<li>✅ All 35 tests pass</li>
+<li>✅ Code is simple and maintainable</li>
+<li>✅ Requirements are clear (encoded in tests)</li>
+<li>✅ Edge cases are handled (boundary testing)</li>
+<li>✅ No refactoring needed (minimal implementations)</li>
+</ul>
+<p>The test suite serves as executable documentation of the calculator's behavior.</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

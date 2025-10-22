@@ -1,0 +1,226 @@
+TAP version 13
+# Subtest: Calc
+    # Subtest: add
+        # Subtest: should add two positive numbers
+        ok 1 - should add two positive numbers
+          ---
+          duration_ms: 0.157709
+          ...
+        # Subtest: should add two negative numbers
+        ok 2 - should add two negative numbers
+          ---
+          duration_ms: 0.04275
+          ...
+        # Subtest: should add positive and negative numbers
+        ok 3 - should add positive and negative numbers
+          ---
+          duration_ms: 0.039042
+          ...
+        # Subtest: should add zero to a number
+        ok 4 - should add zero to a number
+          ---
+          duration_ms: 0.033208
+          ...
+        # Subtest: should add two zeros
+        ok 5 - should add two zeros
+          ---
+          duration_ms: 0.5175
+          ...
+        # Subtest: should add decimal numbers
+        ok 6 - should add decimal numbers
+          ---
+          duration_ms: 0.214
+          ...
+        # Subtest: should add large numbers
+        ok 7 - should add large numbers
+          ---
+          duration_ms: 0.072667
+          ...
+        # Subtest: should handle floating point precision
+        ok 8 - should handle floating point precision
+          ---
+          duration_ms: 0.073125
+          ...
+        # Subtest: should return correct result for commutative property (a+b = b+a)
+        ok 9 - should return correct result for commutative property (a+b = b+a)
+          ---
+          duration_ms: 0.068708
+          ...
+        # Subtest: should add when one argument is negative zero
+        ok 10 - should add when one argument is negative zero
+          ---
+          duration_ms: 0.065917
+          ...
+        1..10
+    ok 1 - add
+      ---
+      duration_ms: 1.691833
+      type: 'suite'
+      ...
+    # Subtest: subtract
+        # Subtest: should subtract two positive numbers
+        ok 1 - should subtract two positive numbers
+          ---
+          duration_ms: 0.149167
+          ...
+        # Subtest: should subtract two negative numbers
+        ok 2 - should subtract two negative numbers
+          ---
+          duration_ms: 0.063042
+          ...
+        # Subtest: should subtract positive and negative numbers
+        ok 3 - should subtract positive and negative numbers
+          ---
+          duration_ms: 0.069417
+          ...
+        # Subtest: should subtract zero from a number
+        ok 4 - should subtract zero from a number
+          ---
+          duration_ms: 0.063625
+          ...
+        # Subtest: should subtract a number from zero
+        ok 5 - should subtract a number from zero
+          ---
+          duration_ms: 0.071375
+          ...
+        # Subtest: should subtract two zeros
+        ok 6 - should subtract two zeros
+          ---
+          duration_ms: 0.06125
+          ...
+        # Subtest: should subtract decimal numbers
+        ok 7 - should subtract decimal numbers
+          ---
+          duration_ms: 0.078458
+          ...
+        # Subtest: should subtract large numbers
+        ok 8 - should subtract large numbers
+          ---
+          duration_ms: 0.0625
+          ...
+        1..8
+    ok 2 - subtract
+      ---
+      duration_ms: 0.74325
+      type: 'suite'
+      ...
+    # Subtest: multiply
+        # Subtest: should multiply two positive numbers
+        ok 1 - should multiply two positive numbers
+          ---
+          duration_ms: 0.154208
+          ...
+        # Subtest: should multiply two negative numbers
+        ok 2 - should multiply two negative numbers
+          ---
+          duration_ms: 0.0595
+          ...
+        # Subtest: should multiply positive and negative numbers
+        ok 3 - should multiply positive and negative numbers
+          ---
+          duration_ms: 0.059416
+          ...
+        # Subtest: should multiply by zero
+        ok 4 - should multiply by zero
+          ---
+          duration_ms: 0.053375
+          ...
+        # Subtest: should multiply one by a number
+        ok 5 - should multiply one by a number
+          ---
+          duration_ms: 0.036292
+          ...
+        # Subtest: should multiply decimal numbers
+        ok 6 - should multiply decimal numbers
+          ---
+          duration_ms: 0.0375
+          ...
+        # Subtest: should multiply large numbers
+        ok 7 - should multiply large numbers
+          ---
+          duration_ms: 0.0315
+          ...
+        # Subtest: should verify commutative property (a*b = b*a)
+        ok 8 - should verify commutative property (a*b = b*a)
+          ---
+          duration_ms: 0.031625
+          ...
+        1..8
+    ok 3 - multiply
+      ---
+      duration_ms: 1.168125
+      type: 'suite'
+      ...
+    # Subtest: divide
+        # Subtest: should divide two positive numbers
+        ok 1 - should divide two positive numbers
+          ---
+          duration_ms: 0.074167
+          ...
+        # Subtest: should divide and return floating point result
+        ok 2 - should divide and return floating point result
+          ---
+          duration_ms: 0.033209
+          ...
+        # Subtest: should divide two negative numbers
+        ok 3 - should divide two negative numbers
+          ---
+          duration_ms: 0.028709
+          ...
+        # Subtest: should divide positive and negative numbers
+        ok 4 - should divide positive and negative numbers
+          ---
+          duration_ms: 0.0315
+          ...
+        # Subtest: should divide zero by a number
+        ok 5 - should divide zero by a number
+          ---
+          duration_ms: 0.028583
+          ...
+        # Subtest: should divide decimal numbers
+        ok 6 - should divide decimal numbers
+          ---
+          duration_ms: 0.056958
+          ...
+        # Subtest: should divide large numbers
+        ok 7 - should divide large numbers
+          ---
+          duration_ms: 0.029667
+          ...
+        # Subtest: should throw error when dividing by zero
+        ok 8 - should throw error when dividing by zero
+          ---
+          duration_ms: 0.179916
+          ...
+        # Subtest: should divide and return floating point for non-integer results
+        ok 9 - should divide and return floating point for non-integer results
+          ---
+          duration_ms: 0.035292
+          ...
+        1..9
+    ok 4 - divide
+      ---
+      duration_ms: 0.562333
+      type: 'suite'
+      ...
+    1..4
+ok 1 - Calc
+  ---
+  duration_ms: 4.65775
+  type: 'suite'
+  ...
+1..1
+# tests 35
+# suites 5
+# pass 35
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 66.633208
+# start of coverage report
+# file | line % | branch % | funcs % | uncovered lines
+# Calc.js | 100.00 | 100.00 | 100.00 | 
+# Calc.test.js | 100.00 | 100.00 | 100.00 | 
+# all files | 100.00 | 100.00 | 100.00 |
+# end of coverage report
