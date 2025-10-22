@@ -7,8 +7,6 @@ npm install    # Install dependencies
 npm test       # Run all 35 tests
 ```
 
-**Result**: ✅ 35/35 tests passing
-
 ---
 
 ## Project Overview
@@ -32,7 +30,6 @@ Total: **35 tests**, all passing ✅
 ### Configuration
 - **package.json** - Project setup
 - **[.github/workflows/ci.yml](.github/workflows/ci.yml)** - GitHub Actions CI/CD
-- **.gitignore** - Git configuration
 
 ---
 
@@ -100,17 +97,17 @@ class Calc {
 
 ### Phase 1: Subtract
 1. **Red**: 8 failing tests 
-2. **Green**: Implement `subtract()` ✅
+2. **Green**: Implement `subtract()` 
 3. **Refactor**: Already optimal
 
 ### Phase 2: Multiply
 1. **Red**: 8 failing tests 
-2. **Green**: Implement `multiply()` ✅
+2. **Green**: Implement `multiply()` 
 3. **Refactor**: Already optimal
 
 ### Phase 3: Divide
 1. **Red**: 9 failing tests 
-2. **Green**: Implement `divide()` with error handling ✅
+2. **Green**: Implement `divide()` with error handling 
 3. **Refactor**: Already optimal
 
 ### Test Results
@@ -122,16 +119,10 @@ node --test --experimental-test-coverage
 
 See [test.dump](test.dump) for detailed test results.
 
-You can also inspect the test results in the github actions in this [repository](https://github.com/Quisette/NYCU-Software-Testing-HW2)
----
+You can also inspect the test results in the [GitHub Actions](https://github.com/Quisette/NYCU-Software-Testing-HW2/actions/) in this repo.
 
-## Design Decisions (from Tests)
 
-**Division Returns Floating-Point**: Tests require `10 ÷ 3 = 3.3333...`, not `3`
 
-**Division by Zero Throws Error**: Tests require error handling to prevent undefined behavior
-
-**All Operations Support Decimals**: Verified through comprehensive test cases
 
 ---
 
